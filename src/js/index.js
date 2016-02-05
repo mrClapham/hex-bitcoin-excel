@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function init(){
     console.log("Dom Loaded ", this);
+    initBitcoin();
     try{
         fin.desktop.main(function(){
             initWithOpenFin();
@@ -13,11 +14,17 @@ function init(){
     }
 };
 
+
 function initWithOpenFin(){
     alert("OpenFin is available");
     // Your OpenFin specific code to go here...
-}
+    //https://www.bitstamp.net/api/transactions/
+};
 
 function initNoOpenFin(){
-    alert("OpenFin is not available - you are probably running in a browser.");
+    console.log("OpenFin is not available - you are probably running in a browser.");
+};
+
+function initBitcoin(){
+    console.log("INIT BITCOIN ");
 }

@@ -13,8 +13,10 @@ app.get('/', function (req, res) {
 });
 
 /* process.env.PORT is used in case you want to push to Heroku, for example, here the port will be dynamically allocated */
-var port = process.env.PORT || 9070;
+var port = process.env.PORT || 8088;
 
-http.createServer(app).listen(port, function(){
+var server = http.createServer(app).listen(port, function(){
+    var io = require('socket.io')(server);
+
     console.log('Express server listening on port ' + port);
 });
